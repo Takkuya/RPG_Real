@@ -43,13 +43,10 @@ export const FormCadastro = () =>{
   if (e.target.name === "confirmacao_senha"){
     if (cadastroInfo.senha !== e.target.value){
          setMensagem( "A senha está errada.")
-
-        console.log(cadastroInfo)
     }
 
     else{
          setMensagem("A senha está certa")
-        console.log(mensagem)
     }
 };
     };
