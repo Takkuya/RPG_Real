@@ -1,6 +1,5 @@
 import React from 'react'
-import Corno from  '../assets/Jesus.jpg'
-import { Card, CardHeader, CardImg, CardBody, Button } from "reactstrap"
+import { Card, CardHeader, CardImg, CardBody } from "reactstrap"
 import { ModalAlunos } from './ModalAlunos'
 
 
