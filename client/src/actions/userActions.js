@@ -9,7 +9,7 @@ export const postUser = ({nome, email, senha}) => (dispatch) =>{
             'Content-type': 'Application/json'
         }
     };
-
+   
     axios
         .post('/user/cadastro', body, config)
         .then((res) =>{

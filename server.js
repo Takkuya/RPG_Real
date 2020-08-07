@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require('cors')
 const userRoutes = require('./routes/userRoutes')
+const addStudenRoutes = require('./routes/addStudentRoutes')
 
 const mongoose = require('mongoose')
 const config = require ('config')
@@ -10,6 +11,7 @@ app.use(cors())
 
 app.use(express.json())
 
+app.use("/student", addStudenRoutes)
 app.use("/user", userRoutes);
 
 const db = config.get("Database")

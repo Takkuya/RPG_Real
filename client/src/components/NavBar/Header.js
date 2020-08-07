@@ -10,10 +10,13 @@ import {
 } from 'reactstrap';
 import { LoginModal } from './Login';
 import { CadastroModal } from './Cadastro';
+import {useSelector} from 'react-redux'
 
 export const Header = () =>{
     const [isOpen, toggle] = useState(false);
     // const [nomeAluno, setAluno] = useState("")
+
+    const users = useSelector(state => state.User.nome)
 
     return (
         <Navbar color="primary" dark expand="md">
@@ -30,6 +33,17 @@ export const Header = () =>{
                     <NavItem>
                         <NavLink href="#">Sei lá</NavLink> 
                     </NavItem>
+          
+                    {
+                        users !== "" ? 
+                    <NavItem >
+                        <NavLink>Seja bem vindo {users}</NavLink>
+                    </NavItem> :null
+                    }
+
+              
+
+            
                 </Nav>
             </Collapse>
         </Navbar>

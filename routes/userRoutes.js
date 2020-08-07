@@ -27,7 +27,7 @@ router.post("/login", (req, res)=>{
 
 router.post("/cadastro", (req, res)=>{
     const{nome, email, senha} = req.body
-
+    console.log(req.body)
     if(!nome || !email || !senha ) {
         return res.status(400).send("Preencha todos os campos")
     }
