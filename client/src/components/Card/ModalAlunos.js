@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { Modal, ModalBody, ModalHeader, Row, Col, Button } from "reactstrap"
+import {DeleteStudentButton} from '../DeleteButton/DeleteStudentButton'
 
-export const ModalAlunos = ({nome, idade, curso, email, imagem}) =>{
+export const ModalAlunos = ({_id,nome, idade, curso, email, imagem}) =>{
     const styles= {
         modalBody: {
             backgroundColor: "#333333",
@@ -23,6 +24,7 @@ export const ModalAlunos = ({nome, idade, curso, email, imagem}) =>{
 
     return(
         <>
+            <DeleteStudentButton _id={_id}/>
             <Button outline color="primary" size="lg" block onClick={handleOpen} className="mt-2">
                 Mais informações
             </Button>

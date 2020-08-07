@@ -3,19 +3,26 @@ import { Header } from './components/NavBar/Header';
 import './App.css'
 import { Col, Row} from 'reactstrap'
 import { Cartao } from './components/Card/Cartao';
-import {useSelector } from 'react-redux'
-import {StudentModal } from './components/NavBar/addStudentModal';
+import {useSelector,useDispatch } from 'react-redux'
+import {StudentModal, AddStudent } from './components/NavBar/addStudentModal';
+import { useEffect } from 'react';
+import {getStudents} from './actions/studentActions'
 
 
 
 function App() {
 
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getStudents())
+  }, [])
   const alunos = useSelector(state => state.Student.student)
   return (
     <div className="App">
       <Header/>
+      <StudentModal/>
       <Row style={{width:'100%'}} className="p-4">
-        <StudentModal/>
+
         {
 
 

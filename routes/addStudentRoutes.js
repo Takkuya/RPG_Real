@@ -30,6 +30,23 @@ router.post("/cadastro", (req, res) => {
     })
 })
 
+
+router.delete('/:_id', (req, res) =>{
+    const _id = req.params._id
+
+    Student.findByIdAndDelete(_id, (err, doc) =>{
+        if (err) throw err
+        
+        return res.send(_id)
+    })
+})
+
+router.get('/', async (req,res) => {
+    const students = await Student.find()
+
+    return res.json(students)
+})
+
 module.exports = router
 
 

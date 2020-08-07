@@ -11,6 +11,7 @@ import {
 import { LoginModal } from './Login';
 import { CadastroModal } from './Cadastro';
 import {useSelector} from 'react-redux'
+import {StudentModal} from './addStudentModal'
 
 export const Header = () =>{
     const [isOpen, toggle] = useState(false);
@@ -30,9 +31,7 @@ export const Header = () =>{
                     <NavItem>
                         <CadastroModal>Eita</CadastroModal>
                     </NavItem>
-                    <NavItem>
-                        <NavLink href="#">Sei lá</NavLink> 
-                    </NavItem>
+
           
                     {
                         users !== "" ? 
@@ -40,6 +39,8 @@ export const Header = () =>{
                         <NavLink>Seja bem vindo {users}</NavLink>
                     </NavItem> :null
                     }
+
+                 
 
               
 
